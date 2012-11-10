@@ -25,6 +25,9 @@ public class Veiculo implements Serializable {
     @Column(length=60)
     private String modelo;
     
+    @Column(length=8)
+    private Placa placa;
+    
     @ManyToOne
     @JoinColumn(name="fornecedor_fk")
     private Fornecedor fornecedor;
@@ -44,6 +47,14 @@ public class Veiculo implements Serializable {
         this.modelo = modelo;
     }
 
+    public Placa getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(Placa placa) {
+        this.placa = placa;
+    }
+    
     public Fornecedor getFornecedor() {
         return fornecedor;
     }
